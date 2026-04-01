@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Analyster</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <h1>The Analyster</h1>
+    <p>AI-powered Data Cleaning Platform</p>
+  </header>
+
+  <!-- Upload -->
+  <div class="card upload-card">
+    <label class="upload-box">
+      <input type="file" id="fileInput" hidden>
+      <div class="upload-content">
+        <h3>📂 Upload your dataset</h3>
+        <p>Drag & drop or click to browse</p>
+        <span id="fileName"></span>
+      </div>
+    </label>
+
+    <button id="cleanBtn" disabled>✨ Clean Data</button>
+  </div>
+
+  <!-- Loader -->
+  <div id="loader" class="loader hidden">
+    <div class="spinner"></div>
+    <p>Processing your data...</p>
+  </div>
+
+  <!-- Grid -->
+  <div class="grid">
+
+    <div id="reportCard" class="card hidden">
+      <h2>📋 Report</h2>
+      <div id="report"></div>
+    </div>
+
+    <div id="chartCard" class="card hidden">
+      <h2>📊 Comparison</h2>
+      <canvas id="chart"></canvas>
+    </div>
+
+  </div>
+
+  <!-- Table -->
+  <div id="tableCard" class="card hidden">
+    <h2>📊 Cleaned Data</h2>
+    <div class="table-wrapper" id="preview"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
