@@ -14,25 +14,25 @@ pipeline {
             parallel {
 
                 stage('Deploy on slave-1') {
-                    agent { label 'backend' }  // slave-1
+                    agent { label 'backend' }
                     steps {
                         sh '''
                         echo "Deploying on Slave-1"
 
-                        docker compose down || true
-                        docker compose up -d --build
+                        docker-compose down || true
+                        docker-compose up -d --build
                         '''
                     }
                 }
 
                 stage('Deploy on slave-2') {
-                    agent { label 'frontend' }  // slave-2
+                    agent { label 'frontend' }
                     steps {
                         sh '''
                         echo "Deploying on Slave-2"
 
-                        docker compose down || true
-                        docker compose up -d --build
+                        docker-compose down || true
+                        docker-compose up -d --build
                         '''
                     }
                 }
